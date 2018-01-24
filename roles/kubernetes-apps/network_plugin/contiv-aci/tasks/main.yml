@@ -1,0 +1,16 @@
+---
+
+- name: Create CNI Container config
+  command: /usr/bin/acc-provision --flavor=kubernetes-1.7 -a -u admin -p {{ aci_admin_pass }} -c /tmp/aci-provision.yml -o "{{kube_config_dir}}/aci_cni_config.yml"
+  when: inventory_hostname == groups['kube-master'][0]
+
+
+- name: Start ACI CNI resources
+  kube:
+    name: aci_cni_config
+    namespace: "{{ system_namespace }}"
+    kubectl: "{{bin_dir}}/kubectl"
+    #resource: "{{item.item.type}}"
+    filename: "{{kube_config_dir}}/aci_cni_config.yml"
+    state: "latest"
+  when: inventory_hostname == groups['kube-master'][0]
