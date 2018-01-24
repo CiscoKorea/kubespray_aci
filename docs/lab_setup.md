@@ -18,7 +18,7 @@ End to End LAB Deployment with Contiv-ACI
   * This template is configured with:
     * 2 CPU, 16GB HD, 2GB RAM and 2 NIC
 * You can create your own template as long as it is a Ubuntu 16.04. Edit **roles/vmware-vm/defaults/main.yml** and set the hd_size to be equal to your VM template disk size. You can also set the ram_size there. 
-### Supported K8S Versionspumvisible() ? "
+### Supported K8S Versions:
 * 1.7.11
 
 # How To Use:
