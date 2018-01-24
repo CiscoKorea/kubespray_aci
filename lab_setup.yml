@@ -79,6 +79,21 @@
                                 "prio": "unspecified",
                                 "targetDscp": "unspecified"
                             },
+                            "children": [
+                                {
+                                    "l3extSubnet": {
+                                        "attributes": {
+                                            "aggregate": "",
+                                            "descr": "",
+                                            "ip": "0.0.0.0/0",
+                                            "name": "",
+                                            "nameAlias": "",
+                                            "scope": "import-security"
+                                        }
+                                    }
+                                }
+
+                            ]
                         }
                     }
                 ]

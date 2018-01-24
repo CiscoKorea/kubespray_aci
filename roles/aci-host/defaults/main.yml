@@ -6,5 +6,4 @@ aci_if_mtu: 9000
 ## The GW parameter is derived from the aci-provision file configuration as there we configure the IP address of the bridge
 ## domain used for the host configuration.
 routes_to_aci:
-  - 172.18.0.0/15
-  - 172.20.0.0/15
+  - 172.0.0.0/8
