@@ -20,6 +20,11 @@ dependencies:
     tags:
       - contiv
 
+  - role: kubernetes-apps/network_plugin/contiv-aci
+    when: kube_network_plugin == 'contiv-aci'
+    tags:
+      - contiv-aci
+
   - role: kubernetes-apps/network_plugin/weave
     when: kube_network_plugin == 'weave'
     tags:

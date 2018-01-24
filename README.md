@@ -94,6 +94,7 @@ You can choose between 4 network plugins. (default: `calico`, except Vagrant use
 
 * [**canal**](https://github.com/projectcalico/canal): a composition of calico and flannel plugins.
 
+* [**contiv-aci**](docs/contiv-aci.md): Integration with Cisco ACI. This plugin support vlan and vxlan.
 * [**contiv**](docs/contiv.md): supports vlan, vxlan, bgp and Cisco SDN networking. This plugin is able to
   apply firewall policies, segregate containers in multiple network and bridging pods onto physical networks.
 
