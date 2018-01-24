@@ -1,4 +1,4 @@
-![Kubernetes Logo](https://s28.postimg.org/lf3q4ocpp/k8s.png)
+![Figure](docs/figures/k8s.png?raw=true)
 
 ## Deploy a production ready kubernetes cluster
 
