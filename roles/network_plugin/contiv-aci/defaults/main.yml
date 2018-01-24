@@ -4,15 +4,15 @@ acc_provision_installer: acc-provision_1.7.1-39_amd64.deb
 # Configuration for ACI Fabric
 #
 aci_config:
-  system_id: KubeSpray             # Every opflex cluster must have a distict ID
+  system_id: KubeSpray-Dev             # Every opflex cluster must have a distict ID
   apic_hosts:                   # List of APIC hosts to connect for APIC API
   - 10.67.185.102
   vmm_domain:                   # Kubernetes VMM domain configuration
     encap_type: vxlan           # Encap mode: vxlan or vlan
     mcast_range:                # Every opflex VMM must use a distinct range
-      start: 225.22.1.1
-      end: 225.22.255.255
-    mcast_fabric: 225.1.2.4
+      start: 225.21.1.1
+      end: 225.21.255.255
+    mcast_fabric: 225.1.2.5
     nested_inside:
       type: vmware
       name: ACI
@@ -21,7 +21,7 @@ aci_config:
   aep: ACI_AttEntityP             # The AEP for ports/VPCs used by this cluster
   vrf:                          # This VRF used to create all kubernetes EPs
     name: vrf1
-    tenant: KubeSpray            # This can be system-id or common
+    tenant: KubeSpray-Dev             # This can be system-id or common
   l3out:
     name: l3out          # Used to provision external IPs
     external_networks:
@@ -31,13 +31,13 @@ aci_config:
 # Networks used by Kubernetes
 #
 net_config:
-  node_subnet: 10.32.0.1/16      # Subnet to use for nodes
-  pod_subnet: 10.33.0.1/16       # Subnet to use for Kubernetes Pods
-  extern_dynamic: 10.34.0.1/24   # Subnet to use for dynamic external IPs
-  extern_static: 10.35.0.1/24    # Subnet to use for static external IPs
-  node_svc_subnet: 10.36.0.1/24  # Subnet to use for service graph
-  kubeapi_vlan: 4011            # The VLAN used by the physdom for nodes
-  service_vlan: 4013            # The VLAN used by LoadBalancer services
+  node_subnet: 172.18.0.1/16      # Subnet to use for nodes
+  pod_subnet: 172.19.0.1/16       # Subnet to use for Kubernetes Pods
+  extern_dynamic: 172.20.0.1/24   # Subnet to use for dynamic external IPs
+  extern_static: 172.20.1.1/24    # Subnet to use for static external IPs
+  node_svc_subnet: 172.20.2.1/24  # Subnet to use for service graph
+  kubeapi_vlan: 4012            # The VLAN used by the physdom for nodes
+  service_vlan: 4014            # The VLAN used by LoadBalancer services
   infra_vlan: 3456             # The VLAN used by ACI infra
 
 #

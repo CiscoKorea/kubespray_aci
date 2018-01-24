@@ -90,12 +90,12 @@ weave_peers: uninitialized
 enable_network_policy: false
 
 # Kubernetes internal network for services, unused block of space.
-kube_service_addresses: 10.37.0.0/24
+kube_service_addresses: 172.20.3.0/24
 
 # internal network. When used, it will assign IP
 # addresses from this range to individual pods.
 # This network must be unused in your network infrastructure!
-kube_pods_subnet: 10.33.0.0/16
+kube_pods_subnet: 172.19.0.0/16
 
 # internal network node size allocation (optional). This is the size allocated
 # to each node on your network.  With these defaults you should have
