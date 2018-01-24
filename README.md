@@ -3,7 +3,7 @@
 ## Deploy a kubernetes cluster with Cisco ACI CNI Plugin 
 
 This is my personal work and not officially supported by Cisco Systems. 
-If you have questions, issues or feedback please drop me a [mail](kubesprayaci@gmail.com)
+If you have questions, issues or feedback please drop me a [mail](mailto:kubesprayaci@gmail.com)
 
 Supported Linux distributions
 ===============
