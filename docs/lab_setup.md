@@ -1,6 +1,6 @@
 End to End LAB Deployment with Contiv-ACI
 ======
-## Requiremetns:
+## Requirements:
 ### Ansible Host:
 * Install latest ansible version (I tested this with 2.4.2.0) 
   * http://docs.ansible.com/ansible/latest/intro_installation.html
@@ -10,6 +10,7 @@ End to End LAB Deployment with Contiv-ACI
   * curl https://bootstrap.pypa.io/get-pip.py | python
 * Install pyvmom (I tested pyvmomi 6.5.0.2017.5)
   * pip install pyvmomi
+* If using password to authenticate ssh session, you need to install sshpass [Installation guide](https://gist.github.com/arunoda/7790979)
 * The kubernetes master nodes needs to be able to communicate with the APIC Management address to make API calls. 
 
 ### Supported OS:
