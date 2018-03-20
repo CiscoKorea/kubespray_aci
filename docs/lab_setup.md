@@ -10,6 +10,8 @@ End to End LAB Deployment with Contiv-ACI
   * curl https://bootstrap.pypa.io/get-pip.py | python
 * Install pyvmom (I tested pyvmomi 6.5.0.2017.5)
   * pip install pyvmomi
+* Install python-netaddr
+  * pip install netaddr
 * If using password to authenticate ssh session, you need to install sshpass [Installation guide](https://gist.github.com/arunoda/7790979)
 * The kubernetes master nodes needs to be able to communicate with the APIC Management address to make API calls. 
 
@@ -18,7 +20,9 @@ End to End LAB Deployment with Contiv-ACI
 * If you want you can grab an Ubuntu VM template at this link: [Ubuntu-16.04 Template](https://cisco.box.com/s/zboppg9jeutg1p9ttow2cr2zgr11ztsm)
   * This template is configured with:
     * 2 CPU, 16GB HD, 2GB RAM and 2 NIC
+    * username/pass: cisco/123Cisco123
 * You can create your own template as long as it is a Ubuntu 16.04. Edit **roles/vmware-vm/defaults/main.yml** and set the hd_size to be equal to your VM template disk size. You can also set the ram_size there. 
+* When you create the Template configure the 2 NIC as CONNECTED or the cloned VM will boot up with disconencted Nic and the script will fail. 
 ### Supported K8S Versions:
 * 1.7.11
 
