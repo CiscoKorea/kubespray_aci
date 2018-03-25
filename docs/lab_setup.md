@@ -86,6 +86,7 @@ k8s-02 ansible_ssh_host=192.168.66.43 ip=10.32.0.12
 ```
 
 * Edit **roles/network_plugin/contiv-aci/defaults/main.yml** This file will contain the ACI CNI plugin configuration. This file is documented in the [Contiv-ACI documentation](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/kb/b_Kubernetes_Integration_with_ACI.html) Note: an example file is present in the folder.
+  * Set the "flavor" to 1.7/1.8 or 1.9 as required, (1.7 and 1.8 are supported on the 2.3.0 TAG, 1.9 is supported on 2.4.0 tag)
 
 # Deploy with this command:
 ansible-playbook -i inventory/inventory -b --become-user=root lab_setup.yml

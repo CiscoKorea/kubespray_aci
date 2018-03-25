@@ -1,0 +1,340 @@
+{
+    "imdata": [
+        {
+            "fvTenant": {
+                "attributes": {
+                    "descr": "",
+                    "dn": "uni/tn-Adriano",
+                    "name": "Adriano",
+                    "nameAlias": "",
+                    "ownerKey": "",
+                    "ownerTag": ""
+                },
+                "children": [
+                    {
+                        "vnsSvcCont": {
+                            "attributes": {}
+                        }
+                    },
+                    {
+                        "fvCtx": {
+                            "attributes": {
+                                "bdEnforcedEnable": "no",
+                                "descr": "",
+                                "knwMcastAct": "permit",
+                                "name": "VRF1",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "pcEnfDir": "ingress",
+                                "pcEnfPref": "enforced"
+                            },
+                            "children": [
+                                {
+                                    "fvRsVrfValidationPol": {
+                                        "attributes": {
+                                            "tnL3extVrfValidationPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "vzAny": {
+                                        "attributes": {
+                                            "descr": "",
+                                            "matchT": "AtleastOne",
+                                            "name": "",
+                                            "nameAlias": "",
+                                            "prefGrMemb": "disabled"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsOspfCtxPol": {
+                                        "attributes": {
+                                            "tnOspfCtxPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToEpRet": {
+                                        "attributes": {
+                                            "tnFvEpRetPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtxToExtRouteTagPol": {
+                                        "attributes": {
+                                            "tnL3extRouteTagPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBgpCtxPol": {
+                                        "attributes": {
+                                            "tnBgpCtxPolName": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvBD": {
+                            "attributes": {
+                                "OptimizeWanBandwidth": "no",
+                                "arpFlood": "yes",
+                                "descr": "",
+                                "epClear": "no",
+                                "epMoveDetectMode": "garp",
+                                "intersiteBumTrafficAllow": "no",
+                                "intersiteL2Stretch": "no",
+                                "ipLearning": "yes",
+                                "limitIpLearnToSubnets": "yes",
+                                "llAddr": "::",
+                                "mac": "00:22:BD:F8:19:FF",
+                                "mcastAllow": "no",
+                                "multiDstPktAct": "bd-flood",
+                                "name": "DB1",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "type": "regular",
+                                "unicastRoute": "yes",
+                                "unkMacUcastAct": "flood",
+                                "unkMcastAct": "flood",
+                                "vmac": "not-applicable"
+                            },
+                            "children": [
+                                {
+                                    "igmpIfP": {
+                                        "attributes": {
+                                            "descr": "",
+                                            "name": "",
+                                            "nameAlias": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvSubnet": {
+                                        "attributes": {
+                                            "ctrl": "",
+                                            "descr": "",
+                                            "ip": "192.168.1.1/24",
+                                            "name": "",
+                                            "nameAlias": "",
+                                            "preferred": "no",
+                                            "scope": "private",
+                                            "virtual": "no"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsIgmpsn": {
+                                        "attributes": {
+                                            "tnIgmpSnoopPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsCtx": {
+                                        "attributes": {
+                                            "tnFvCtxName": "VRF1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBdToEpRet": {
+                                        "attributes": {
+                                            "resolveAct": "resolve",
+                                            "tnFvEpRetPolName": ""
+                                        }
+                                    }
+                                },
+                                {
+                                    "fvRsBDToNdP": {
+                                        "attributes": {
+                                            "tnNdIfPolName": ""
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "fvRsTenantMonPol": {
+                            "attributes": {
+                                "tnMonEPGPolName": ""
+                            }
+                        }
+                    },
+                    {
+                        "fvAp": {
+                            "attributes": {
+                                "descr": "",
+                                "name": "uSeg",
+                                "nameAlias": "",
+                                "ownerKey": "",
+                                "ownerTag": "",
+                                "prio": "unspecified"
+                            },
+                            "children": [
+                                {
+                                    "fvAEPg": {
+                                        "attributes": {
+                                            "descr": "",
+                                            "floodOnEncap": "disabled",
+                                            "fwdCtrl": "",
+                                            "isAttrBasedEPg": "yes",
+                                            "matchT": "AtleastOne",
+                                            "name": "IP_Base1",
+                                            "nameAlias": "",
+                                            "pcEnfPref": "unenforced",
+                                            "prefGrMemb": "exclude",
+                                            "prio": "unspecified"
+                                        },
+                                        "children": [
+                                            {
+                                                "fvRsDomAtt": {
+                                                    "attributes": {
+                                                        "classPref": "encap",
+                                                        "delimiter": "",
+                                                        "encap": "unknown",
+                                                        "encapMode": "auto",
+                                                        "epgCos": "Cos0",
+                                                        "epgCosPref": "disabled",
+                                                        "instrImedcy": "immediate",
+                                                        "netflowDir": "both",
+                                                        "netflowPref": "disabled",
+                                                        "primaryEncap": "unknown",
+                                                        "primaryEncapInner": "unknown",
+                                                        "resImedcy": "immediate",
+                                                        "secondaryEncapInner": "unknown",
+                                                        "switchingMode": "native",
+                                                        "tDn": "uni/vmmp-VMware/dom-ACI"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsCustQosPol": {
+                                                    "attributes": {
+                                                        "tnQosCustomPolName": ""
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsBd": {
+                                                    "attributes": {
+                                                        "tnFvBDName": "DB1"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvCrtrn": {
+                                                    "attributes": {
+                                                        "descr": "",
+                                                        "match": "any",
+                                                        "name": "default",
+                                                        "nameAlias": "",
+                                                        "ownerKey": "",
+                                                        "ownerTag": "",
+                                                        "prec": "0"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "fvIpAttr": {
+                                                                "attributes": {
+                                                                    "descr": "",
+                                                                    "ip": "192.168.1.0/24",
+                                                                    "name": "0",
+                                                                    "nameAlias": "",
+                                                                    "ownerKey": "",
+                                                                    "ownerTag": "",
+                                                                    "usefvSubnet": "no"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "fvAEPg": {
+                                        "attributes": {
+                                            "descr": "",
+                                            "floodOnEncap": "disabled",
+                                            "fwdCtrl": "",
+                                            "isAttrBasedEPg": "no",
+                                            "matchT": "AtleastOne",
+                                            "name": "BaseEPG",
+                                            "nameAlias": "",
+                                            "pcEnfPref": "unenforced",
+                                            "prefGrMemb": "exclude",
+                                            "prio": "unspecified"
+                                        },
+                                        "children": [
+                                            {
+                                                "fvRsDomAtt": {
+                                                    "attributes": {
+                                                        "classPref": "useg",
+                                                        "delimiter": "",
+                                                        "encap": "vlan-101",
+                                                        "encapMode": "auto",
+                                                        "epgCos": "Cos0",
+                                                        "epgCosPref": "disabled",
+                                                        "instrImedcy": "immediate",
+                                                        "netflowDir": "both",
+                                                        "netflowPref": "disabled",
+                                                        "primaryEncap": "vlan-100",
+                                                        "primaryEncapInner": "unknown",
+                                                        "resImedcy": "immediate",
+                                                        "secondaryEncapInner": "unknown",
+                                                        "switchingMode": "native",
+                                                        "tDn": "uni/vmmp-VMware/dom-ACI"
+                                                    },
+                                                    "children": [
+                                                        {
+                                                            "vmmSecP": {
+                                                                "attributes": {
+                                                                    "allowPromiscuous": "reject",
+                                                                    "descr": "",
+                                                                    "forgedTransmits": "reject",
+                                                                    "macChanges": "reject",
+                                                                    "name": "",
+                                                                    "nameAlias": "",
+                                                                    "ownerKey": "",
+                                                                    "ownerTag": ""
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "fvRsCustQosPol": {
+                                                    "attributes": {
+                                                        "tnQosCustomPolName": ""
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "fvRsBd": {
+                                                    "attributes": {
+                                                        "tnFvBDName": "DB1"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "totalCount": "1"
+}
