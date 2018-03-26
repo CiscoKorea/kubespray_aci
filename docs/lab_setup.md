@@ -24,9 +24,11 @@ End to End LAB Deployment with Contiv-ACI
 * You can create your own template as long as it is a Ubuntu 16.04. Edit **roles/vmware-vm/defaults/main.yml** and set the hd_size to be equal to your VM template disk size. You can also set the ram_size there. 
 * When you create the Template configure the 2 NIC as CONNECTED or the cloned VM will boot up with disconencted Nic and the script will fail. 
 ### Supported K8S Versions:
-* 1.9: You can simply do a git clone of the master branck and 1.9 is the default supported version. 
-* 1.8, 1.7: do a git clone and then checkout version 2.3.0 (git checkout v2.3.0)
-
+* 1.9: git clone 1.9 is the default version. 
+* 1.8: Do a git clone and then checkout version 2.3.2 (git checkout v2.3.2)
+* 1.7: 
+  * Do a git clone and then checkout version 2.3.2 (git checkout v2.3.2)
+  * Edit **roles/kubernetes-apps/network_plugin/contiv-aci/tasks/main.yml** and set --flavor=kubernetes-1.7 in the **Create CNI Container** config task
 # How To Use:
 
 ## Enable VM provisioning (Optional):
@@ -87,7 +89,6 @@ k8s-02 ansible_ssh_host=192.168.66.43 ip=10.32.0.12
 ```
 
 * Edit **roles/network_plugin/contiv-aci/defaults/main.yml** This file will contain the ACI CNI plugin configuration. This file is documented in the [Contiv-ACI documentation](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/kb/b_Kubernetes_Integration_with_ACI.html) Note: an example file is present in the folder.
-  * Set the "flavor" to 1.7/1.8 or 1.9 as required, (1.7 and 1.8 are supported on the 2.3.0 TAG, 1.9 is supported on 2.4.0 tag)
 
 # Deploy with this command:
 ansible-playbook -i inventory/inventory -b --become-user=root lab_setup.yml
