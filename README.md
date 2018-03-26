@@ -28,7 +28,7 @@ Versions of supported components
 --------------------------------
 
 
-[kubernetes](https://github.com/kubernetes/kubernetes/releases) v1.7.11 <br>
+[kubernetes](https://github.com/kubernetes/kubernetes/releases) v1.7  1.8 and 1.9 <br>
 [etcd](https://github.com/coreos/etcd/releases) v3.2.4 <br>
 [docker](https://www.docker.com/) v1.13 (see note)<br>
 [contiv-aci](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/aci/apic/sw/kb/b_Kubernetes_Integration_with_ACI.html)<br>

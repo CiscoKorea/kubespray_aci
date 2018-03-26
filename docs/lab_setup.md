@@ -24,7 +24,8 @@ End to End LAB Deployment with Contiv-ACI
 * You can create your own template as long as it is a Ubuntu 16.04. Edit **roles/vmware-vm/defaults/main.yml** and set the hd_size to be equal to your VM template disk size. You can also set the ram_size there. 
 * When you create the Template configure the 2 NIC as CONNECTED or the cloned VM will boot up with disconencted Nic and the script will fail. 
 ### Supported K8S Versions:
-* 1.7.11
+* 1.9: You can simply do a git clone of the master branck and 1.9 is the default supported version. 
+* 1.8, 1.7: do a git clone and then checkout version 2.3.0 (git checkout v2.3.0)
 
 # How To Use:
 
