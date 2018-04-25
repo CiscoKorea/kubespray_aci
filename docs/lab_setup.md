@@ -2,7 +2,7 @@ End to End LAB Deployment with Contiv-ACI
 ======
 ## Requirements:
 ### Ansible Host:
-* Install latest ansible version (I tested this with 2.4.2.0) 
+* Install latest ansible version (I tested this with 2.5) 
   * http://docs.ansible.com/ansible/latest/intro_installation.html
   * Install all ansible requirements 
 * Python 2.7.9 or higher (I tested with 2.7.12)
