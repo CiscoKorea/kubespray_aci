@@ -18,7 +18,7 @@
 - name: Helm | Apply Helm Manifests (RBAC)
   kube:
     name: "{{item.item.name}}"
-    namespace: "{{ system_namespace }}"
+    namespace: "kube-system"
     kubectl: "{{bin_dir}}/kubectl"
     resource: "{{item.item.type}}"
     filename: "{{kube_config_dir}}/{{item.item.file}}"
@@ -28,12 +28,13 @@
 
 - name: Helm | Install/upgrade helm
   command: >
-    {{ bin_dir }}/helm init --upgrade --tiller-image={{ tiller_image_repo }}:{{ tiller_image_tag }} --tiller-namespace={{ system_namespace }}
+    {{ bin_dir }}/helm init --upgrade --tiller-image={{ tiller_image_repo }}:{{ tiller_image_tag }} --tiller-namespace=kube-system
     {% if helm_skip_refresh %} --skip-refresh{% endif %}
     {% if helm_stable_repo_url is defined %} --stable-repo-url {{ helm_stable_repo_url }}{% endif %}
     {% if rbac_enabled %} --service-account=tiller{% endif %}
     {% if tiller_node_selectors is defined %} --node-selectors {{ tiller_node_selectors }}{% endif %}
     {% if tiller_override is defined %} --override {{ tiller_override }}{% endif %}
+    {% if tiller_max_history is defined %} --history-max={{ tiller_max_history }}{% endif %}
   when: (helm_container is defined and helm_container.changed) or (helm_task_result is defined and helm_task_result.changed)
 
 - name: Helm | Set up bash completion
